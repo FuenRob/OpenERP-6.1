@@ -1,0 +1,21 @@
+<openerp>
+<data noupdate="1">
+
+    #
+    # Sequences for product code
+    #
+
+    <record model="ir.sequence.type" id="seq_type_product_seq">
+        <field name="name">Ref Product code</field>
+        <field name="code">product.product</field>
+    </record>
+    <record model="ir.sequence" id="seq_product_seq">
+        <field name="name">Product Reference</field>
+        <field name="code">product.product</field>
+        <field name="prefix">PRO</field>
+        <field name="padding">5</field>
+        <field name="number_next">1</field>
+    </record>
+
+</data>
+</openerp>
