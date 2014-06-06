@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data> 
+		
+		<record model="ir.ui.view" id="fleet_vehicles_tree" >
+			<field name="name">fleet.vehicles.tree</field>
+			<field name="model">fleet.vehicles</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Vehicles">
+					<field name="name" />
+					<field name="model" />
+					<field name="class" />
+					<field name="fuel" />
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="fleet_vehicles_form">
+			<field name="name">vehicles.form</field>
+			<field name="model">fleet.vehicles</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Vehicles">
+						<field name="name" />
+						<field name="model" />
+						<group colspan="2" col="2">
+						<separator string="General Data" colspan="2" col="2"/>
+							<field name="employee_ids" />
+							<field name="adquisition_date" />
+						</group>
+						<group colspan="2" col="2">
+						<separator string="Data sheet" colspan="2" col="2"/>
+							<field name="cost" />
+							<field name="fuel" />
+							<field name="doors_number" />
+							<field name="class" />
+						</group>
+				</form>
+			</field>
+		</record>
+
+		<record id="act_vehicles_form" model="ir.actions.act_window">
+			<field name="name">Vehicles</field>
+			<field name="res_model">fleet.vehicles</field>
+			<field name="src_model">fleet.vehicles</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="fleet_vehicles_tree" />
+		</record>
+
+	</data>
+</openerp>

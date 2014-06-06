@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<menuitem id="menu_fleet_vehicles" name="Fleet Vehicles" />
+		
+ 		<menuitem id="menu_fleet_vehicles_vehicles" name="Fleet Vehicles" parent="menu_fleet_vehicles" />
+ 		<menuitem id="menu_configuration_vehicles" name="Vehicles" parent="menu_fleet_vehicles_vehicles" action="act_vehicles_form" />
+		
+		<menuitem id="menu_contract_vehicles_vehicles" name="Contract" parent="menu_fleet_vehicles" />
+		<menuitem id="menu_contract_vehicles" name="Contacts" parent="menu_contract_vehicles_vehicles" action="act_vehicles_contract_form" />
+	</data>
+</openerp>

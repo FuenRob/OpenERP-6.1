@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data> 
+		
+		<record model="ir.ui.view" id="fleet_contract_vehicles_tree" >
+			<field name="name">fleet.contract.vehicles.tree</field>
+			<field name="model">fleet.contract</field>
+			<field name="type">tree</field>
+			<field name="arch" type="xml">
+				<tree string="Contracts">
+					<field name="number" />
+					<field name="vehicle_id" />
+				</tree>
+			</field>
+		</record>
+		
+		<record model="ir.ui.view" id="fleet_contract_vehicles_form">
+			<field name="name">fleet.contract.vehicles.form</field>
+			<field name="model">fleet.contract</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Contracts">
+						<field name="number" />
+						<field name="partner_id" />
+						<field name="vehicle_id" />
+						<field colspan="4" name="address_route" nolabel="1">
+						<tree string="Routes">
+							<field name="priority" />
+							<field name="address_route" />
+						</tree>
+						</field>
+				</form>
+			</field>
+		</record>
+
+		<record id="act_vehicles_contract_form" model="ir.actions.act_window">
+			<field name="name">Rutas</field>
+			<field name="res_model">fleet.contract</field>
+			<field name="src_model">fleet.contract</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">tree,form</field>
+			<field name="view_id" ref="fleet_contract_vehicles_tree" />
+		</record>
+	</data>
+</openerp>
